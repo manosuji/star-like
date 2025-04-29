@@ -7,3 +7,37 @@
 font-family: 'stars';
 src: url('./assets/star_ornaments.otf')
 }
+
+#about-text {
+    font-family: raritas;
+    color:#4A2545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    line-height: 1.25em;
+}
+
+.br-button {
+    color:#4A2545;
+    font-size: 2em;
+    position: fixed;
+    bottom: 0px;
+    right: 1em;
+}
+
+#about-button {
+    color:#a9a9a9;
+    font-family: raritas;
+    right: 1.25em
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+}
+
+a:visited {
+    color:inherit;
+}
