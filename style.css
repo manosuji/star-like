@@ -19,16 +19,15 @@ src: url('./assets/star_ornaments.otf')
 }
 
 .br-button {
-    color:#4A2545;
-    font-size: 2em;
+    color:#51291E;
+    font-family: raritas;
+    font-size: 1.75em;
     position: fixed;
     bottom: 0px;
     right: 1em;
 }
 
 #about-button {
-    color:#a9a9a9;
-    font-family: raritas;
     right: 1.25em
 }
 
