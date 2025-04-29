@@ -16,15 +16,13 @@ function setup() {
   lineHeight = txtSize * 1.2;
   // set max width
   maxLineWidth = width / 2;
-
+  // retrieve and process poem text
   let textElement = document.querySelector(".text-block");
   if (!textElement) return;
-
   let textBlock = textElement.textContent.replace(/\n/g, " / ");
   textElement.style.display = "none";
-
   wrapText(textBlock);
-
+  // see handleResize function
   window.addEventListener("resize", handleResize);
 }
 
