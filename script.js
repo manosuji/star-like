@@ -1,25 +1,31 @@
-let defaultTxtSize = parseFloat(getComputedStyle(document.body).fontSize);
-let txtSize = .85*defaultTxtSize;
+let txtSize;
+let lineHeight;
+let maxLineWidth;
 let words = [];
 let lines = [];
 let default_font = "stars";
 let mouse_font = "raritas";
-let maxLineWidth;
-let lineHeight = txtSize * 1.2;
 let hoverDuration = 8000; // time to keep font changed
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  // get poem text
-  let textElement = document.querySelector(".text-block");
-  let textBlock = textElement.innerText; 
-  textElement.style.display = "none"; // hide original text, use p5.js rendering
-  // set style
+  // sizing and spacing setup
+  let rootFontSize = parseFloat(getComputedStyle(document.body).fontSize);
+  txtSize = .85*rootFontSize;
   textSize(txtSize);
+  lineHeight = txtSize * 1.2;
+  // set max width
   maxLineWidth = width / 2;
-  // see function
+
+  let textElement = document.querySelector(".text-block");
+  if (!textElement) return;
+
+  let textBlock = textElement.textContent.replace(/\n/g, " / ");
+  textElement.style.display = "none";
+
   wrapText(textBlock);
+
+  window.addEventListener("resize", handleResize);
 }
 
 function draw() {
@@ -119,4 +125,11 @@ function getMaxBBox(bbox1, bbox2) {
     w: Math.max(bbox1.w, bbox2.w),
     h: Math.max(bbox1.h, bbox2.h),
   };
+}
+
+// when window is resized text will remain centered
+function handleResize() {
+    resizeCanvas(windowWidth, windowHeight);
+    maxLineWidth = windowWidth * 0.5;
+    wrapText(textBlock);
 }
