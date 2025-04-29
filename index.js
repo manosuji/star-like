@@ -27,26 +27,11 @@ function createButtons() {
         styleButton(btn);
         btn.mousePressed(() => window.location.href = button.link);
     });
-    // about button gets special treatment
-    let aboutBtn = createButton("?");
-    styleAboutButton(aboutBtn);
-    let fontSizePx = parseFloat(getComputedStyle(document.body).fontSize) * 3;
-    aboutBtn.position(windowWidth - fontSizePx * 1.5, windowHeight - fontSizePx * 1.5);
-    aboutBtn.size(textWidth("?") + 40, fontSizePx);
-    aboutBtn.mousePressed(() => window.location.href = "./about.html");
 }
 
 function styleButton(btn) {
     btn.style("background-color", "rgba(0, 0, 0, 0)");
     btn.style("color", "#4A2545");
     btn.style("font-size", "3em");
-    btn.style("border-width", "0px");
-}
-
-function styleAboutButton(btn) {
-    btn.style("background-color", "rgba(0, 0, 0, 0)");
-    btn.style("color", "#d3d3d3");
-    btn.style("font-size", "2em");
-    btn.style("font-family", "raritas");
     btn.style("border-width", "0px");
 }
