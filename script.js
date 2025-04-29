@@ -1,5 +1,5 @@
 let defaultTxtSize = parseFloat(getComputedStyle(document.body).fontSize);
-let txtSize = .9*defaultTxtSize;
+let txtSize = .85*defaultTxtSize;
 let words = [];
 let lines = [];
 let default_font = "stars";
