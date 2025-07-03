@@ -40,3 +40,32 @@ a {
 a:visited {
     color:inherit;
 }
+
+/* haven't translated this to mobile so what's below
+& just places a notice if viewed on a mobile device */
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: #4A2545;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  
+    body > *:not(.mobile) {
+      display: none !important;
+    }
+
+.mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+.mobile::before {
+    font-family: raritas, sans-serif;
+    color: white;
+    content: "✷ please open on larger device ✷";
+}
+}
